@@ -6,7 +6,9 @@ body {
   padding-bottom: 3rem;
   /* color: #5a5a5a; */
 }
-
+main {
+  background-color:#fff;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -31,10 +33,16 @@ body {
     background-position: center center;
   }
   &:nth-child(2) {
-    background-image: url(画像のパス/2.jpg);
+    background-image: url("3802728_l.jpg");
+    background-size: cover;
+    background-attachment: fixed;         
+    background-position: center center;
   }
   &:nth-child(3) {
-    background-image: url(画像のパス/3.jpg);
+    background-image: url("510112_l.jpg");
+    background-size: cover;
+    background-attachment: fixed;         
+    background-position: center center;
   }
 }
 .carousel-item > img {
@@ -76,7 +84,6 @@ body {
   line-height: 1;
   letter-spacing: -.05rem;
 }
-
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
