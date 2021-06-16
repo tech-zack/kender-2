@@ -19,51 +19,21 @@
 </a>
 
   <!-- Fixed navbar -->
-  <header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <%= link_to '剣der~~!', root_path, class:"navbar-brand" %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-        <% if user_signed_in?%>
-          <%= link_to "#{current_user.nickname}さん","#", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%=link_to 'ログアウト', destroy_user_session_path, method: :delete,class: "nav-link"%>
-        </li>
-        <% else %>
-        <li class="nav-item">
-          <%=link_to 'ログイン', new_user_session_path, class: "nav-link"%>
-        </li>
-        <li class="nav-item">
-          <%=link_to '新規登録', new_user_registration_path,class: "nav-link"%>
-        </li>
-        <% end %>
-      </ul>
-      <form class="form-inline mt-2 mt-md-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
-</header>
+  <%= render "shared/header"%>
 
 <!-- Begin page content -->
 <main role="main" class="flex-shrink-0">
   <div class="container">
-    <h1 class="mt-5">剣術とは</h1>
-    <p class="lead">剣を使用する古武術であり、現代日本の武道である剣道の母体となった。剣術では一連の動作をまとめた形の習得（形稽古）から開始するのが一般的である。なお実際の戦場での斬り合いは形通りではなく、袈裟（鎖骨・頚動脈）に斬り込んだり、手足などを狙うことが主流とされ、示現流の「立木打ち」のような実践を考慮した稽古もあった。甲冑を着用せず平時の服装で剣のみを用いる「素肌剣術」は、戦乱が無くなった江戸時代以降に発達した。この時代からの剣術流派では、互いに平服を着て打刀と小太刀のみを持った状態を想定した形が多い。ただし体術を併伝する流派も多く、完全に剣のみとなったのは武道化した剣道の登場以降とされる。また実用的な剣術の他に、試し斬りのための「試刀術」も考案された。<code>wikipedia参照</code></p>
-    <p>原文<a href="http://ja.wikipedia.org/wiki/剣術">wikipedia</a> に行く</p>
+  <img src="/assets/samurai_kettou.png" alt="Generic placeholder image" class="rounded" width="140" height="140">
+    <p class="lead">剣術</p>
   </div>
 </main>
 
 <footer class="footer mt-auto py-3">
   <div class="container">
-    <span class="text-muted">剣術風景</span>
-    <img src="/assets/1329054_l.jpg" alt="Generic placeholder image" class="featurette-image img-fluid mx-auto">
+    <%= link_to(new_kenzyutu_path, class: 'post-btn') do %>
+    <span class="text-muted">みんなの投稿</span>
+    <%end%>
   </div>
 </footer>
 
