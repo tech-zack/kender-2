@@ -140,6 +140,11 @@ h2{
 p{font-family: serif;
 }
 
+.featurette-image{
+  background-color:#272727;
+  border-radius: 10px;
+}
+
 /*新規登録.ログイン*/
 .form-wrap{
   display: flex; 
@@ -175,5 +180,8 @@ p{font-family: serif;
   font-family: serif;
   font-size: 60px;
 }
-
+.rounded{
+  background-color:#272727;;
+  border-radius: 50%;
+}
 /*新規登録.ログイン*/

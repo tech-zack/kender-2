@@ -1,0 +1,2 @@
+module KensisHelper
+end
