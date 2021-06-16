@@ -5,9 +5,12 @@ body {
   padding-top: 3rem;
   padding-bottom: 3rem;
   /* color: #5a5a5a; */
-}
-main {
-  background-color:#fff;
+  background-image:url("510112_l.jpg");
+  background-color:rgba(255,255,255,0.5);
+  background-blend-mode:lighten;
+  background-size: cover;
+  background-attachment: fixed;         
+  background-position: center center;
 }
 
 /* CUSTOMIZE THE CAROUSEL
@@ -33,13 +36,13 @@ main {
     background-position: center center;
   }
   &:nth-child(2) {
-    background-image: url("3802728_l.jpg");
+    background-image: url("1329054_l.jpg");
     background-size: cover;
     background-attachment: fixed;         
     background-position: center center;
   }
   &:nth-child(3) {
-    background-image: url("510112_l.jpg");
+    background-image: url("3802728_l.jpg");
     background-size: cover;
     background-attachment: fixed;         
     background-position: center center;
@@ -53,6 +56,21 @@ main {
   height: 32rem;
 }
 
+.btn-primary {
+  background-color:yellowgreen;
+  border: 1px solid #808080;
+  color: #272727;
+}
+
+.btn-secondary{
+  background-color:yellowgreen;
+  border: 1px solid #808080;
+  color: #272727;
+}
+
+.text-muted{
+  color: #272727;
+}
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
@@ -106,3 +124,56 @@ main {
     margin-top: 7rem;
   }
 }
+
+.navbar-brand{
+  font-family: serif;
+}
+
+h1{
+  font-family: serif;
+}
+
+h2{
+  font-family: serif;
+}
+
+p{font-family: serif;
+}
+
+/*新規登録.ログイン*/
+.form-wrap{
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-default{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-right:none;
+  border-left:none;
+  border-top:none;
+  outline: none; 
+  background: transparent; 
+  width: 250px;
+  height: 30px;
+  border-color: #272727;
+}
+
+.register-btn{
+  margin-top: 30px;
+  width: 250px;
+  height: 40px;
+  outline: none; 
+  background: transparent; 
+  border-color: #272727;
+  font-family: serif;
+}
+
+.form-header-text{
+  margin-top: 20px;
+  font-family: serif;
+  font-size: 60px;
+}
+
+/*新規登録.ログイン*/
