@@ -247,3 +247,62 @@ p{font-family: serif;
   border-radius: 50%;
 }
 /*new*/
+
+/*index*/
+.kensi-lists{
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+ }
+
+ .kensi-title{
+  display: flex;
+  justify-content: center;
+  color:#272727;
+ }
+
+ .kensi-img {
+  width: 30vh;
+  height: 33vh;
+  border: 1px solid #808080;
+  background-color:#272727;
+  padding: 7px;
+}
+
+.kensi-read{
+  display: flex;
+  justify-content: center;
+}
+
+ .pagination {
+  display: flex;
+  justify-content:space-evenly;
+  text-decoration: none;
+  font-family: fantasy;
+  color:#272727;
+ }
+  /*index*/
+
+  /* タブレット表示時 */
+  @media (max-width: 1024px) {
+    .kensi-lists{
+    display: flex;              
+    flex-wrap: wrap;            
+    align-content:stretch;
+   }
+   .kensi-info{
+    margin-left: 5vw;
+   }
+  }
+  
+   /* スマホ表示時 */
+  @media (max-width: 599px) {
+    .kensi-lists{
+      display: flex;             
+      flex-wrap: wrap;           
+      align-content:stretch;      
+    }
+    .kensi-info{
+      margin-left: 20vw;
+    }
+  }

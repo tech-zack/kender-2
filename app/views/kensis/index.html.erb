@@ -26,15 +26,34 @@
   <div class="container">
   <img src="/assets/kendo.png" alt="Generic placeholder image" class="rounded" width="140" height="140">
     <p class="lead">剣道</p>
+    <%= link_to(new_kensi_path, class: 'post-btn') do %>
+    <span class="text-muted">投稿する</span>
+    <%end%>
   </div>
 </main>
 
 <footer class="footer mt-auto py-3">
   <div class="container">
-    <%= link_to(new_kensi_path, class: 'post-btn') do %>
-    <span class="text-muted">投稿する</span>
-    <%end%>
-  </div>
+  <ul class='kensi-lists'>
+      <% @kensis.each do |kensi|%>
+      <li class='list'>
+       <%= link_to kensis_path(kensi.id) do %>
+        <div class='kensi-info'>
+          <div class='kensi-img-content'>
+            <%= image_tag kensi.image, class: 'kensi-img' %>
+          </div>
+          <div class='kensi-title'>
+            <%= truncate(kensi.title, length:15) do%>
+            <%= link_to "続きを読む" ,kensi_path(kensi.id),class:"kensi-read" %>
+            <%end%>
+          </div>
+        </div>
+       <%end%>
+      </li>
+     <% end %>
+    </ul>
+    <%= paginate @kensis %>
+    </div>
 </footer>
 
     <!-- Optional JavaScript -->

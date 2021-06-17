@@ -27,15 +27,35 @@
   <div class="container">
   <img src="/assets/sports_kendou_men.png" alt="Generic placeholder image" class="rounded" width="140" height="140">
     <p class="lead">剣道具</p>
+    <%= link_to(new_kendogu_path, class: 'post-btn') do %>
+    <span class="text-muted">投稿する</span>
+    <%end%>
   </div>
 </main>
 
 <footer class="footer mt-auto py-3">
   <div class="container">
-    <%= link_to(new_kendogu_path, class: 'post-btn') do %>
-    <span class="text-muted">投稿する</span>
-    <%end%>
   </div>
+  <ul class='kensi-lists'>
+      <% @kendogus.each do |kendogu|%>
+      <li class='list'>
+       <%= link_to kendogus_path(kendogu.id) do %>
+        <div class='kensi-info'>
+          <div class='kensi-img-content'>
+            <%= image_tag kendogu.image, class: 'kensi-img' %>
+          </div>
+          <div class='kensi-title'>
+            <%= truncate(kendogu.title, length:15) do%>
+            <%= link_to "続きを読む" ,kendogus_path(kendogu.id),class:"kensi-read" %>
+            <%end%>
+          </div>
+        </div>
+       <%end%>
+      </li>
+     <% end %>
+    </ul>
+    <%= paginate @kendogus %>
+    </div>
 </footer>
 
     <!-- Optional JavaScript -->
