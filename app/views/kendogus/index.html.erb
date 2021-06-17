@@ -39,14 +39,14 @@
   <ul class='kensi-lists'>
       <% @kendogus.each do |kendogu|%>
       <li class='list'>
-       <%= link_to kendogus_path(kendogu.id) do %>
+       <%= link_to kendogu_path(kendogu.id) do %>
         <div class='kensi-info'>
           <div class='kensi-img-content'>
             <%= image_tag kendogu.image, class: 'kensi-img' %>
           </div>
           <div class='kensi-title'>
             <%= truncate(kendogu.title, length:15) do%>
-            <%= link_to "続きを読む" ,kendogus_path(kendogu.id),class:"kensi-read" %>
+            <%= link_to "続きを読む" ,kendogu_path(kendogu.id),class:"kensi-read" %>
             <%end%>
           </div>
         </div>

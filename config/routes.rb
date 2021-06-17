@@ -6,8 +6,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'kenders#index'
   resources :kenders, only: :index
-  resources :kenzyutus, only: [:index, :new, :create]
-  resources :kendogus, only: [:index, :new, :create]
-  resources :kensis, only: [:index,:new, :create]
+  resources :kenzyutus do
+  end
+  resources :kendogus do
+  end
+  resources :kensis do
+  end
 end
   

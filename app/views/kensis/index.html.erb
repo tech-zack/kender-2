@@ -37,7 +37,7 @@
   <ul class='kensi-lists'>
       <% @kensis.each do |kensi|%>
       <li class='list'>
-       <%= link_to kensis_path(kensi.id) do %>
+       <%= link_to kensi_path(kensi.id) do %>
         <div class='kensi-info'>
           <div class='kensi-img-content'>
             <%= image_tag kensi.image, class: 'kensi-img' %>

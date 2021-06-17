@@ -1,0 +1,22 @@
+<div class="scholar-show">
+  <div class="scholar-box">
+    <div class="scholar-img-content">
+      <%= image_tag @kensi.image.variant(resize: '300x300'), class:"scholar-box-img" %>
+    </div>
+    <h2 class="name">
+      <%= simple_format(@kensi.title) %>
+    </h2>
+    <h2 class="name">
+      <%= simple_format(@kensi.text) %>
+    </h2>
+    <h2 class="name">
+      <%= @kensi.user.nickname %>
+    </h2>
+  <div class = destory-btn>
+  <% if user_signed_in? %>
+    <% if current_user.id == @kensi.user_id %>
+      <%= link_to "編集",edit_kensi_path(@kensi.id), method: :get, class: "scholar-blue-btn" %>
+      <%= link_to "削除", kensi_path(@kensi.id), method: :delete, class:"scholar-destroy"%>
+    <% end %>
+  <% end %>
+  </div>

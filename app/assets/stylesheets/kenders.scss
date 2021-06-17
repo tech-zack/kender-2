@@ -283,6 +283,92 @@ p{font-family: serif;
  }
   /*index*/
 
+  /*show*/
+ .scholar-img-content{
+  display: flex;
+  justify-content: center;
+ }
+ .scholar-box-img{
+  border: 10px solid #272727;
+ }
+ .name{
+  display: flex;
+  justify-content: center;
+  word-break: break-word;
+ }
+
+ .destory-btn{
+  display: flex;
+  justify-content: space-around;
+ }
+
+ .scholar-blue-btn{
+  
+  background-color: yellowgreen;
+  font-size: 24px;
+  font-weight: bold;
+  color: #272727;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  border-radius: 100px;
+  text-decoration: none;
+  border: solid 2px #272727;
+ }
+
+ 
+
+ .scholar-destroy{
+  
+  background-color: yellowgreen;
+  font-size: 24px;
+  font-weight: bold;
+  color: #272727;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  border-radius: 100px;
+  text-decoration: none;
+  border: solid 2px #272727;
+ }
+
+ .option{
+  display: flex;
+  justify-content: center;
+ }
+
+ .comment-box {
+  margin: 1px 0;
+  text-align: center;
+  border-right:none;
+  border-left:none;
+  border-top:none;
+}
+
+ .comment-text {
+  width: 50%;
+  height: 30px;
+  padding-top: 10px;
+  border: solid 2px #272727;
+  resize: none;
+  border-right:none;
+  border-left:none;
+  border-top:none;
+  outline: none; 
+  background: transparent; 
+}
+
+.comment-btn {
+  line-height: 48px;
+  background-color:yellowgreen;
+  border: 1px solid #272727;
+  color: black;
+  width: 50%;
+  min-width: 150px;
+  font-size: 18px;
+  border-radius: 100px;
+  margin-bottom: 2vh;
+}
+/*show*/
+
   /* タブレット表示時 */
   @media (max-width: 1024px) {
     .kensi-lists{

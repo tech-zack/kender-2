@@ -37,14 +37,14 @@
   <ul class='kensi-lists'>
       <% @kenzyutus.each do |kenzyutu|%>
       <li class='list'>
-       <%= link_to kenzyutus_path(kenzyutu.id) do %>
+       <%= link_to kenzyutu_path(kenzyutu.id) do %>
         <div class='kensi-info'>
           <div class='kensi-img-content'>
             <%= image_tag kenzyutu.image, class: 'kensi-img' %>
           </div>
           <div class='kensi-title'>
             <%= truncate(kenzyutu.title, length:15) do%>
-            <%= link_to "続きを読む" ,kenzyutus_path(kenzyutu.id),class:"kensi-read" %>
+            <%= link_to "続きを読む" ,kenzyutu_path(kenzyutu.id),class:"kensi-read" %>
             <%end%>
           </div>
         </div>
