@@ -8,12 +8,12 @@ class KensisController < ApplicationController
   end
 
   def create
-    Kendogu.create(kendogu_params)
+    Kensi.create(kensi_params)
   end
 
   private
   def kensi_params
-    params.require(:kensi).permit(:name, :image, :text, :title)
+    params.require(:kensi).permit(:title, :text, :image).merge(user_id: current_user.id)
   end
 
 end

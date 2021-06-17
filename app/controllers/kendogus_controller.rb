@@ -13,7 +13,7 @@ class KendogusController < ApplicationController
 
   private
   def kendogu_params
-    params.require(:kendougu).permit(:name, :image, :text, :title)
+    params.require(:kendougu).permit(:title, :text, :image).merge(user_id: current_user.id)
   end
 
 end

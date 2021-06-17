@@ -13,7 +13,7 @@ class KenzyutusController < ApplicationController
 
   private
   def kenzyutu_params
-    params.require(:kenzyutu).permit(:name, :image, :text, :title)
+    params.require(:kenzyutu).permit(:title, :text, :image).merge(user_id: current_user.id)
   end
 
 end
