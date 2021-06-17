@@ -4,5 +4,17 @@ class KenzyutusController < ApplicationController
   end
 
   def new
+    @kenzyutu = Kenzyutu.new
   end
+
+  def create
+    Kenzyutu.create(kenzyutu_params)
+  end
+
+  private
+  def kenzyutu_params
+    params.require(:kenzyutu).permit(:name, :image, :text, :title)
+  end
+
 end
+

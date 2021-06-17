@@ -1,0 +1,36 @@
+<div class='k-contents'>
+  <div class="k-main">
+  <img src="/assets/samurai_kettou.png" alt="Generic placeholder image" class="icon" width="140" height="140">
+    <%= form_with(model: @kenzyutu, local: true) do |f| %>
+    
+    <%# 投稿画像 %>
+    <div class="imag-upload">
+      <div class="weight-bold-text">
+        投稿画像
+      </div>
+      <div class="click-upload">
+        <%= f.file_field :image, id:"kendogus-image" %>
+      </div>
+    </div>
+    <%# /投稿画像 %>
+
+    <%# タイトルと内容 %>
+    <div class="new-k">
+      <div class="weight-bold-text">
+      </div>
+      <%= f.text_area :title, class:"k-title", id:"kendogus-name", placeholder:"タイトル（必須 50字まで)", maxlength:"50" %>
+        <div class="weight-bold-text">
+        </div>
+        <%= f.text_area :text, class:"k-text", id:"kendogus-info", placeholder:"内容（必須 1,000文字まで)" ,rows:"7" ,maxlength:"1000" %>
+    </div>
+    <%# /タイトルと内容 %>
+
+    <%# 下部ボタン%>
+    <div class="k-btn-contents">
+      <%= f.submit "投稿する" ,class:"k-btn" %>
+    </div>
+    <%# /下部ボタン%>
+
+  </div>
+  <% end %>
+</div>

@@ -181,7 +181,69 @@ p{font-family: serif;
   font-size: 60px;
 }
 .rounded{
-  background-color:#272727;;
+  background-color:#272727;
   border-radius: 50%;
 }
 /*新規登録.ログイン*/
+
+/*new*/
+
+.k-contents{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.k-main{
+  background-color:#fff ;
+  border-radius: 10px;
+  padding:20px 20px;
+}
+.new-k{
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+}
+.imag-upload{
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+}
+
+.k-title{
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  width: 40vw;
+}
+.k-btn-contents{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.k-text{
+  width: 40vw;
+  height: 20vh;
+}
+
+.weight-bold-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.k-btn{
+  color: #272727;
+  margin-top: 10px;
+  width: 40vw;
+  border: none; 
+  background-color:yellowgreen;
+  border-radius: 10px;
+}
+
+.icon{
+  margin:0 16vw;
+  background-color:#272727;
+  border-radius: 50%;
+}
+/*new*/
