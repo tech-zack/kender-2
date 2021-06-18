@@ -19,6 +19,7 @@
       <%= link_to "削除", kensi_path(@kensi.id), method: :delete, class:"scholar-destroy"%>
     <% end %>
   <% end %>
+  
   <div class="container">
     <% if user_signed_in? %>
       <%= form_with(model: [@kensi, @comment], local: true) do |form| %>

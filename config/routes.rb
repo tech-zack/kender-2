@@ -8,12 +8,21 @@ Rails.application.routes.draw do
   resources :kenders, only: :index
   resources :kenzyutus do
     resources :messages, only: :create
+    collection do
+      get 'search'
+    end
   end
   resources :kendogus do
     resources :speaks, only: :create
+    collection do
+      get 'search'
+    end
   end
   resources :kensis do
     resources :comments, only: :create
+    collection do
+      get 'search'
+    end
   end
 end
   

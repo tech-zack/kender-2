@@ -1,7 +1,7 @@
 class KensisController < ApplicationController
   before_action :authenticate_user!, only: [:new,:create,:edit,:update,:destroy]
   before_action :set_kensi, only:[:edit,:update,:destroy]
-  before_action :move_to_index, except: [:index, :show,:new,:create]
+  before_action :move_to_index, except: [:index, :show,:new,:create, :search]
 
   def index
     @kensis = Kensi.order(created_at: :desc).page(params[:page]).per(4)
@@ -46,6 +46,10 @@ class KensisController < ApplicationController
   else
     redirect_to kensis_path
   end
+end
+
+def search
+  @kensis = Kensi.search(params[:keyword])
 end
   
 

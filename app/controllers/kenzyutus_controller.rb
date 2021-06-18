@@ -1,7 +1,7 @@
 class KenzyutusController < ApplicationController
   before_action :authenticate_user!, only: [:new,:create,:edit,:update,:destroy]
   before_action :set_kenzyutu, only:[:edit,:update,:destroy]
-  before_action :move_to_index, except: [:index,:new,:create,:show]
+  before_action :move_to_index, except: [:index,:new,:create,:show, :search]
 
   def index
     @kenzyutus = Kenzyutu.order(created_at: :desc).page(params[:page]).per(4)
@@ -48,6 +48,10 @@ class KenzyutusController < ApplicationController
   end
 end
   
+  def search
+    @kenzyutus = Kenzyutu.search(params[:keyword])
+  end
+
   private
   def kenzyutu_params
     params.require(:kenzyutu).permit(:title, :text, :image).merge(user_id: current_user.id)

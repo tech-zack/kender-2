@@ -18,7 +18,33 @@
   </div>
 </a>
 
-<%= render "shared/header"%>
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <%= link_to '剣der~~!', root_path, class:"navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+        <% if user_signed_in?%>
+          <%= link_to "#{current_user.nickname}さん","#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%=link_to 'ログアウト', destroy_user_session_path, method: :delete,class: "nav-link"%>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <%=link_to 'ログイン', new_user_session_path, class: "nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%=link_to '新規登録', new_user_registration_path,class: "nav-link"%>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</header>
 
 <main role="main">
 
@@ -116,7 +142,7 @@
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
         <h2 class="featurette-heading">使用方法 </h2>
-        <p class="lead">新規登録から登録していただきますと、自由に記事を投稿することとまた、好きな記事に向けコメントやいいねを送ることができます。新規登録しない場合、記事の投稿やコメントを送ることまた、いいね機能は使えませんが、記事を検索することや、記事を調べることができます。</p>
+        <p class="lead">新規登録から登録していただきますと、自由に記事を投稿することとまた、好きな記事に向けコメントを送ることができます。新規登録しない場合、記事の投稿やコメントを送ることができません。しかし、記事を検索することや、記事を調べることができます。</p>
       </div>
       <div class="col-md-5 order-md-1">
         <img src="/assets/iai_battou_woman.png" alt="Generic placeholder image" class="featurette-image img-fluid mx-auto">

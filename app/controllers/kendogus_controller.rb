@@ -1,7 +1,7 @@
 class KendogusController < ApplicationController
   before_action :authenticate_user!, only: [:new,:create,:edit,:update,:destroy]
   before_action :set_kendogu, only:[:edit,:update,:destroy]
-  before_action :move_to_index, except: [:index,:new,:create,:show]
+  before_action :move_to_index, except: [:index,:new,:create,:show, :search]
   
   def index
     @kendogus = Kendogu.order(created_at: :desc).page(params[:page]).per(4)
@@ -46,6 +46,10 @@ class KendogusController < ApplicationController
   else
     redirect_to kendogus_path
   end
+end
+
+def search
+  @kendogus = Kendogu.search(params[:keyword])
 end
   
   private
