@@ -50,6 +50,8 @@ end
 
 def search
   @kensis = Kensi.search(params[:keyword])
+  @kenzyutus = Kenzyutu.search(params[:keyword])
+  @kendogus = Kendogu.search(params[:keyword])
 end
   
 

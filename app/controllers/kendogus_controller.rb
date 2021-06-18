@@ -12,7 +12,7 @@ class KendogusController < ApplicationController
   end
 
   def create
-    @kendogu = Kensi.new(kendogu_params)
+    @kendogu = Kendogu.new(kendogu_params)
     if @kendogu.save
       redirect_to kendogus_path
     else

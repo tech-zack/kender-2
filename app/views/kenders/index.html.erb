@@ -18,33 +18,7 @@
   </div>
 </a>
 
-<header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <%= link_to '剣der~~!', root_path, class:"navbar-brand" %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-        <% if user_signed_in?%>
-          <%= link_to "#{current_user.nickname}さん","#", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%=link_to 'ログアウト', destroy_user_session_path, method: :delete,class: "nav-link"%>
-        </li>
-        <% else %>
-        <li class="nav-item">
-          <%=link_to 'ログイン', new_user_session_path, class: "nav-link"%>
-        </li>
-        <li class="nav-item">
-          <%=link_to '新規登録', new_user_registration_path,class: "nav-link"%>
-        </li>
-        <% end %>
-      </ul>
-    </div>
-  </nav>
-</header>
+<%= render "shared/header"%>
 
 <main role="main">
 
