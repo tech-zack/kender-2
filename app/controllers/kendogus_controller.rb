@@ -12,7 +12,7 @@ class KendogusController < ApplicationController
   end
 
   def create
-    @kendogu = Kensi.new(kensi_params)
+    @kendogu = Kensi.new(kendogu_params)
     if @kendogu.save
       redirect_to kendogus_path
     else
@@ -41,6 +41,8 @@ class KendogusController < ApplicationController
     @p =  Kendogu.all
     if @p.ids.include?(params[:id].to_i)
       @kendogu = Kendogu.find(params[:id])
+      @speak = Speak.new
+      @speaks = @kendogu.speaks.includes(:user)
   else
     redirect_to kendogus_path
   end

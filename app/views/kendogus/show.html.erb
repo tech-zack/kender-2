@@ -19,4 +19,22 @@
       <%= link_to "削除", kendogu_path(@kendogu.id), method: :delete, class:"scholar-destroy"%>
     <% end %>
   <% end %>
+  <div class="container">
+    <% if user_signed_in? %>
+      <%= form_with(model: [@kendogu, @speak], local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+        <%= form.submit "SEND" %>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+  </div>
+  <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% @speaks.each do |speak| %>
+        <p>
+          <strong><%= link_to speak.user.nickname, "/users/#{speak.user_id}" %>：</strong>
+          <%= speak.text %>
+        </p>
+      <% end %>
   </div>

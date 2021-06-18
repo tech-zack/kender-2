@@ -7,10 +7,13 @@ Rails.application.routes.draw do
   root to: 'kenders#index'
   resources :kenders, only: :index
   resources :kenzyutus do
+    resources :messages, only: :create
   end
   resources :kendogus do
+    resources :speaks, only: :create
   end
   resources :kensis do
+    resources :comments, only: :create
   end
 end
   

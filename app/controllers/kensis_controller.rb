@@ -41,6 +41,8 @@ class KensisController < ApplicationController
     @p =  Kensi.all
     if @p.ids.include?(params[:id].to_i)
       @kensi = Kensi.find(params[:id])
+    @comment = Comment.new
+    @comments = @kensi.comments.includes(:user)
   else
     redirect_to kensis_path
   end

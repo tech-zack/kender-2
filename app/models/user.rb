@@ -8,4 +8,7 @@ class User < ApplicationRecord
   has_many :kensis
   has_many :kenzyutus
   has_many :kendogus
+  has_many :comments
+  has_many :messages
+  has_many :speaks
 end

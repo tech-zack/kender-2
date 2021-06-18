@@ -12,7 +12,7 @@ class KenzyutusController < ApplicationController
   end
 
   def create
-    @kenzyutu = Kenzyutu.new(kensi_params)
+    @kenzyutu = Kenzyutu.new(kenzyutu_params)
     if @kenzyutu.save
       redirect_to kenzyutus_path
     else
@@ -41,6 +41,8 @@ class KenzyutusController < ApplicationController
     @p =  Kenzyutu.all
     if @p.ids.include?(params[:id].to_i)
       @kenzyutu = Kenzyutu.find(params[:id])
+      @message = Message.new
+      @messages = @kenzyutu.messages.includes(:user)
   else
     redirect_to kenzyutus_path
   end
